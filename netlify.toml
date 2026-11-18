@@ -1,0 +1,9 @@
+# Configuração do Netlify para o site da DN CELL
+
+[build]
+  # O site é HTML puro, sem etapa de build: publica a própria pasta
+  publish = "."
+
+[functions]
+  # Pasta das funções (avaliações do Google)
+  directory = "netlify/functions"

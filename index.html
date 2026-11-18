@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DN Cell | Assistência técnica de celulares em Arapiraca-AL</title>
+  <meta name="description" content="Troca de tela, conector de carga e bateria com garantia. Orçamento grátis no Centro de Arapiraca-AL.">
+  <meta name="theme-color" content="#09090b">
+
+  <!-- Fontes (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="imagens/logos_princi/logo_maior.jpeg" >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================================================
+       ÍCONES (não precisa mexer aqui)
+       Cada ícone é chamado no site com: <svg class="icone"><use href="#i-nome"></use></svg>
+       ========================================================= -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-celular" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-raio" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+    <symbol id="i-bateria" viewBox="0 0 24 24"><path d="M15 7h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/><path d="M6 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1"/><path d="m11 7-3 5h4l-3 5"/><line x1="22" x2="22" y1="11" y2="13"/></symbol>
+    <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+    <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-selo" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="i-aspas" viewBox="0 0 24 24"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></symbol>
+    <symbol id="i-local" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-agenda" viewBox="0 0 24 24"><path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h5"/><path d="M17.5 17.5 16 16.3V14"/><circle cx="16" cy="16" r="6"/></symbol>
+
+    <!-- Ícones novos (serviços, diferenciais, loja e avaliações) -->
+    <symbol id="i-limpeza" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></symbol>
+    <symbol id="i-gotas" viewBox="0 0 24 24"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></symbol>
+    <symbol id="i-placa" viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></symbol>
+    <symbol id="i-alto-falante" viewBox="0 0 24 24"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/></symbol>
+    <symbol id="i-microfone" viewBox="0 0 24 24"><path d="M12 19v3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><rect x="9" y="2" width="6" height="13" rx="3"/></symbol>
+    <symbol id="i-digital" viewBox="0 0 24 24"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></symbol>
+    <symbol id="i-medalha" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></symbol>
+    <symbol id="i-tecnico" viewBox="0 0 24 24"><path d="m16 11 2 2 4-4"/><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></symbol>
+    <symbol id="i-sacola" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+    <symbol id="i-estrela" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+  </svg>
+
+  <!-- =========================================================
+       FUNDO DO SITE
+       A imagem de fundo é definida no style.css (classe .fundo-site),
+       com um gradiente escuro por cima. Arquivo esperado: imagens/fundo.jpg
+       ========================================================= -->
+  <div class="fundo-site" aria-hidden="true"></div>
+
+
+  <!-- =========================================================
+       TOPO (logo + local)
+       ========================================================= -->
+  <header class="topo">
+    <div class="container topo__conteudo">
+
+      <!-- EDITE AQUI: coloque o caminho da logo no src (ex.: imagens/logo.png) -->
+      <img class="logo logo--topo" src="imagens/logos_princi/logo_maior.jpeg" alt="DN Cell - Assistência e Acessórios">
+
+      <span class="pilula-local">Centro · Arapiraca-AL</span>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =========================================================
+         INÍCIO (HERO)
+         ========================================================= -->
+    <section class="hero">
+      <div class="container hero__grade">
+
+        <div class="hero__texto">
+          <span class="selo">
+            <span class="selo__ponto"></span>
+            Avaliação de orçamento grátis
+          </span>
+
+          <!-- EDITE AQUI: logo grande do início (pode ser o mesmo arquivo da logo do topo) -->
+          <img class="logo logo--hero" src="imagens/logos_princi/logo_maior.jpeg" alt="DN Cell - Assistência e Acessórios">
+
+          <h1>Seu celular avaliado com orçamento grátis no Centro de Arapiraca</h1>
+
+          <p class="hero__descricao">
+            Troca de tela, conector de carga e bateria com garantia.
+            Chame no WhatsApp e cuide do seu aparelho sem complicação.
+          </p>
+
+          <!-- Botões de ação do início -->
+          <div class="hero__acoes">
+            <a class="botao" data-whatsapp href="#">
+              <svg class="icone"><use href="#i-whatsapp"></use></svg>
+              Agendar orçamento grátis
+            </a>
+
+            <!-- LOJA VIRTUAL: o endereço fica em script.js (CONFIG.lojaUrl).
+                 Enquanto ele estiver vazio, este botão fica escondido. -->
+            <a class="botao botao--contorno" data-loja href="#" hidden>
+              <svg class="icone"><use href="#i-sacola"></use></svg>
+              Acessar nossa loja
+            </a>
+          </div>
+
+          <p class="hero__nota">Resposta rápida · Segunda a sábado</p>
+
+          <p class="hero__experiencia">
+            <svg class="icone"><use href="#i-medalha"></use></svg>
+            Mais de 20 anos no mercado
+          </p>
+        </div>
+
+        <!-- EDITE AQUI: imagem principal do início (arquivo sugerido: imagens/hero.jpg) -->
+        <div class="img-box hero__imagem" data-arquivo="imagens/hero.jpg">
+          <img src="imagens/logos_princi/manutencao.jpeg" alt="Celular em manutenção na bancada da DN Cell">
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         SERVIÇOS
+         Todo card é um link que abre o WhatsApp com uma mensagem pronta.
+         A frase do atributo data-servico entra na mensagem:
+         "Olá! Gostaria de saber mais sobre o serviço de [data-servico]..."
+         (o modelo da mensagem fica em script.js -> CONFIG.mensagemServico)
+         ========================================================= -->
+    <section class="secao" id="servicos">
+      <div class="container">
+        <h2 class="revelar">Nossos serviços</h2>
+        <p class="subtitulo">Toque em um serviço para pedir informações pelo WhatsApp.</p>
+
+        <!-- Serviços principais (com foto de fundo) -->
+        <div class="grade grade--3">
+
+          <a class="cartao servico revelar" href="#" data-servico="troca de tela" aria-label="Troca de telas: falar no WhatsApp">
+            <!-- EDITE AQUI: foto de fundo do card (imagens/servico-tela.jpg) -->
+            <div class="img-box servico__fundo" data-arquivo="imagens/servico-tela.jpg">
+              <img src="imagens/serviços/troca_tela.jpeg" alt="troca de tela de celular">
+            </div>
+            <svg class="servico__seta icone"><use href="#i-seta"></use></svg>
+            <svg class="icone icone--ouro"><use href="#i-celular"></use></svg>
+            <h3>Troca de telas</h3>
+            <p>Tela quebrada ou sem toque? A gente troca para você.</p>
+          </a>
+
+          <a class="cartao servico revelar" href="#" data-servico="troca de conector de carga" aria-label="Troca de conector de carga: falar no WhatsApp">
+            <!-- EDITE AQUI: foto de fundo do card (imagens/servico-conector.jpg) -->
+            <div class="img-box servico__fundo" data-arquivo="imagens/servico-conector.jpg">
+              <img src="imagens/serviços/troca_conector.jpeg" alt="troca de conector de carga">
+            </div>
+            <svg class="servico__seta icone"><use href="#i-seta"></use></svg>
+            <svg class="icone icone--ouro"><use href="#i-raio"></use></svg>
+            <h3>Troca de conector de carga</h3>
+            <p>Celular não carrega direito? Trocamos o conector.</p>
+          </a>
+
+          <a class="cartao servico revelar" href="#" data-servico="troca de bateria" aria-label="Troca de baterias: falar no WhatsApp">
+            <!-- EDITE AQUI: foto de fundo do card (imagens/servico-bateria.jpg) -->
+            <div class="img-box servico__fundo" data-arquivo="imagens/servico-bateria.jpg">
+              <img src="imagens/serviços/troca_bateria.jpeg" alt="troca de bateria de celular">
+            </div>
+            <svg class="servico__seta icone"><use href="#i-seta"></use></svg>
+            <svg class="icone icone--ouro"><use href="#i-bateria"></use></svg>
+            <h3>Troca de baterias</h3>
+            <p>Bateria acabando rápido? Colocamos uma nova.</p>
+          </a>
+
+        </div>
+
+        <!-- Outros serviços (cards compactos, sem foto) -->
+        <div class="servicos-extras">
+
+          <a class="cartao servico servico--compacto revelar" href="#" data-servico="limpeza interna de celulares" aria-label="Limpeza interna: falar no WhatsApp">
+            <svg class="servico__seta icone"><use href="#i-seta"></use></svg>
+            <span class="servico__icone"><svg class="icone"><use href="#i-limpeza"></use></svg></span>
+            <div>
+              <h3>Limpeza interna</h3>
+              <p>Higienização completa por dentro do aparelho.</p>
+            </div>
+          </a>
+
+          <a class="cartao servico servico--compacto revelar" href="#" data-servico="troca de câmera" aria-label="Troca de câmera: falar no WhatsApp">
+            <svg class="servico__seta icone"><use href="#i-seta"></use></svg>
+            <span class="servico__icone"><svg class="icone"><use href="#i-camera"></use></svg></span>
+            <div>
+              <h3>Troca de câmera</h3>
+              <p>Câmera com defeito ou lente quebrada? Trocamos para você.</p>
+            </div>
+          </a>
+
+          <a class="cartao servico servico--compacto revelar" href="#" data-servico="desoxidação por contato com água" aria-label="Desoxidação por contato com água: falar no WhatsApp">
+            <svg class="servico__seta icone"><use href="#i-seta"></use></svg>
+            <span class="servico__icone"><svg class="icone"><use href="#i-gotas"></use></svg></span>
+            <div>
+              <h3>Desoxidação por contato com água</h3>
+              <p>Celular molhado? Fazemos a desoxidação do aparelho.</p>
+            </div>
+          </a>
+
+          <a class="cartao servico servico--compacto revelar" href="#" data-servico="reparo na placa" aria-label="Reparo na placa: falar no WhatsApp">
+            <svg class="servico__seta icone"><use href="#i-seta"></use></svg>
+            <span class="servico__icone"><svg class="icone"><use href="#i-placa"></use></svg></span>
+            <div>
+              <h3>Reparo na placa</h3>
+              <p>Diagnóstico e reparo na placa do seu celular.</p>
+            </div>
+          </a>
+
+          <a class="cartao servico servico--compacto revelar" href="#" data-servico="reparo de alto-falante" aria-label="Reparo de alto-falante: falar no WhatsApp">
+            <svg class="servico__seta icone"><use href="#i-seta"></use></svg>
+            <span class="servico__icone"><svg class="icone"><use href="#i-alto-falante"></use></svg></span>
+            <div>
+              <h3>Reparo de alto-falante</h3>
+              <p>Sem som ou com chiado? Reparamos o alto-falante.</p>
+            </div>
+          </a>
+
+          <a class="cartao servico servico--compacto revelar" href="#" data-servico="reparo de microfone" aria-label="Reparo de microfone: falar no WhatsApp">
+            <svg class="servico__seta icone"><use href="#i-seta"></use></svg>
+            <span class="servico__icone"><svg class="icone"><use href="#i-microfone"></use></svg></span>
+            <div>
+              <h3>Reparo de microfone</h3>
+              <p>Ninguém te ouve nas ligações? Reparamos o microfone.</p>
+            </div>
+          </a>
+
+          <a class="cartao servico servico--compacto revelar" href="#" data-servico="reparo no leitor de impressão digital" aria-label="Reparo no leitor de impressão digital: falar no WhatsApp">
+            <svg class="servico__seta icone"><use href="#i-seta"></use></svg>
+            <span class="servico__icone"><svg class="icone"><use href="#i-digital"></use></svg></span>
+            <div>
+              <h3>Reparo no leitor de impressão digital</h3>
+              <p>Leitor de digital falhando? Fazemos o reparo.</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         MARCAS ATENDIDAS
+         EDITE AQUI: coloque o logotipo oficial de cada marca no src
+         (de preferência em SVG ou PNG com fundo transparente).
+         O nome da marca aparece escrito embaixo de cada logotipo.
+         Para trocar o nome ou incluir outra marca, copie um <li class="marca">.
+         ========================================================= -->
+    <section class="secao secao--faixa" id="marcas">
+      <div class="container">
+        <h2 class="revelar">Marcas que atendemos</h2>
+        <p class="subtitulo">Trabalhamos com aparelhos de diversos fabricantes.</p>
+
+        <ul class="marcas">
+
+          <li class="cartao marca revelar">
+            <div class="img-box marca__logo" data-arquivo="imagens/marcas/samsung.svg">
+              <img src="imagens/icon_marcas/icon_samsung.jpeg" alt="Samsung">
+            </div>
+            <span class="marca__nome">Samsung</span>
+          </li>
+
+          <li class="cartao marca revelar">
+            <div class="img-box marca__logo" data-arquivo="imagens/marcas/motorola.svg">
+              <img src="imagens/icon_marcas/icon_motorola.jpeg" alt="Motorola">
+            </div>
+            <span class="marca__nome">Motorola</span>
+          </li>
+
+          <li class="cartao marca revelar">
+            <div class="img-box marca__logo" data-arquivo="imagens/marcas/xiaomi.svg">
+              <img src="imagens/icon_marcas/icon_xiaomi.jpeg" alt="Xiaomi">
+            </div>
+            <span class="marca__nome">Xiaomi</span>
+          </li>
+
+          <li class="cartao marca revelar">
+            <div class="img-box marca__logo" data-arquivo="imagens/marcas/apple.svg">
+              <img src="imagens/icon_marcas/icon_apple.jpeg" alt="Apple">
+            </div>
+            <span class="marca__nome">Apple</span>
+          </li>
+
+          <li class="cartao marca revelar">
+            <div class="img-box marca__logo" data-arquivo="imagens/marcas/realme.svg">
+              <img src="imagens/icon_marcas/icon_realme.jpeg" alt="Realme">
+            </div>
+            <span class="marca__nome">Realme</span>
+          </li>
+
+          <li class="cartao marca revelar">
+            <div class="img-box marca__logo" data-arquivo="imagens/marcas/poco.svg">
+              <img src="imagens/icon_marcas/icon_poco.jpeg" alt="Poco">
+            </div>
+            <span class="marca__nome">Poco</span>
+          </li>
+
+          <li class="cartao marca revelar">
+            <div class="img-box marca__logo" data-arquivo="imagens/marcas/infinix.svg">
+              <img src="imagens/icon_marcas/icon_infinix.jpeg" alt="Infinix">
+            </div>
+            <span class="marca__nome">Infinix</span>
+          </li>
+
+          <li class="cartao marca revelar">
+            <div class="img-box marca__logo" data-arquivo="imagens/marcas/asus.svg">
+              <img src="imagens/icon_marcas/icon_tecno.jpeg" alt="Tecno">
+            </div>
+            <span class="marca__nome">Tecno</span>
+          </li>
+
+          <li class="cartao marca revelar">
+            <div class="img-box marca__logo" data-arquivo="imagens/marcas/oppo.svg">
+              <img src="imagens/icon_marcas/icon_oppo.jpeg" alt="Oppo">
+            </div>
+            <span class="marca__nome">Oppo</span>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         POR QUE ESCOLHER
+         ========================================================= -->
+    <section class="secao secao--compacta" id="diferenciais">
+      <div class="container">
+        <h2 class="revelar">Por que escolher a DN CELL</h2>
+
+        <!-- Texto institucional (EDITE AQUI se quiser mudar a frase) -->
+        <p class="texto-institucional revelar">
+          Há mais de 20 anos no mercado, a DN CELL construiu sua trajetória oferecendo serviços
+          de assistência técnica com compromisso, experiência e dedicação aos seus clientes.
+        </p>
+
+        <!-- Diferenciais em destaque -->
+        <div class="destaques">
+
+          <div class="cartao destaque revelar">
+            <span class="destaque__icone"><svg class="icone"><use href="#i-medalha"></use></svg></span>
+            <div>
+              <h3>Mais de 20 anos de experiência</h3>
+              <p>Tradição e conhecimento técnico para cuidar do seu aparelho.</p>
+            </div>
+          </div>
+
+          <div class="cartao destaque revelar">
+            <span class="destaque__icone"><svg class="icone"><use href="#i-tecnico"></use></svg></span>
+            <div>
+              <h3>Atendimento por técnico especializado</h3>
+              <p>Seu celular é avaliado e consertado por quem entende do assunto.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Demais diferenciais -->
+        <div class="grade grade--3 diferenciais">
+
+          <div class="diferencial revelar">
+            <span class="diferencial__icone"><svg class="icone"><use href="#i-relogio"></use></svg></span>
+            <div>
+              <h3>Resolve em até 1 hora</h3>
+              <p>Seu problema resolvido sem longa espera.</p>
+            </div>
+          </div>
+
+          <div class="diferencial revelar">
+            <span class="diferencial__icone"><svg class="icone"><use href="#i-escudo"></use></svg></span>
+            <div>
+              <h3>Garantia de 3 meses</h3>
+              <p>Você sai tranquilo com o serviço feito.</p>
+            </div>
+          </div>
+
+          <div class="diferencial revelar">
+            <span class="diferencial__icone"><svg class="icone"><use href="#i-selo"></use></svg></span>
+            <div>
+              <h3>Peças de qualidade</h3>
+              <p>Usamos peças boas para durar mais.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="centralizar">
+          <a class="botao" data-whatsapp href="#">
+            <svg class="icone"><use href="#i-whatsapp"></use></svg>
+            Agendar orçamento
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         AVALIAÇÕES DO GOOGLE
+         Os cartões são montados pelo script.js a partir das avaliações
+         reais do Google (veja a pasta "servidor" e CONFIG.avaliacoesEndpoint).
+         Nenhuma avaliação é escrita à mão aqui.
+         ========================================================= -->
+    <section class="secao secao--faixa" id="depoimentos">
+      <div class="container">
+        <h2 class="revelar">O que nossos clientes dizem</h2>
+        <p class="subtitulo">Avaliações reais de clientes, publicadas no Google.</p>
+
+        <!-- Nota média e total (preenchido pelo script quando as avaliações carregam) -->
+        <div class="avaliacoes-resumo" id="avaliacoes-resumo" hidden>
+          <span class="avaliacoes-resumo__nota" id="avaliacoes-nota"></span>
+          <span class="estrelas" id="avaliacoes-estrelas" aria-hidden="true"></span>
+          <span class="avaliacoes-resumo__total" id="avaliacoes-total"></span>
+        </div>
+
+        <!-- Cartões das avaliações -->
+        <div class="grade grade--3" id="avaliacoes-lista" aria-live="polite"></div>
+
+        <!-- Mensagem exibida quando não há avaliações para mostrar -->
+        <p class="avaliacoes-vazio" id="avaliacoes-vazio" hidden>
+          Veja o que nossos clientes dizem sobre a DN CELL diretamente no Google.
+        </p>
+
+        <div class="avaliacoes-acoes">
+          <!-- Perfil da DN CELL no Google. Para abrir direto a tela de avaliação,
+               troque o href por: https://search.google.com/local/writereview?placeid=SEU_PLACE_ID -->
+          <a class="botao botao--contorno" href="https://share.google/tTg8xhXD4V6o0f73w" target="_blank" rel="noopener noreferrer">
+            <svg class="icone"><use href="#i-estrela"></use></svg>
+            Avaliar no Google
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         NOSSA LOJA (galeria)
+         ========================================================= -->
+    <section class="secao secao--faixa secao--sem-topo" id="loja">
+      <div class="container">
+        <h3 class="titulo-menor revelar">Nossa loja</h3>
+        
+
+        <div class="grade grade--3">
+
+          <!-- EDITE AQUI: fotos da loja. Para tirar a etiqueta "Foto de exemplo", apague a linha <span class="tag-exemplo"> -->
+          <div class="img-box galeria__item revelar" data-arquivo="imagens/loja-1.jpg">
+            <img src="imagens/nossa_loja/entrada.jpeg" alt="Fachada e balcão da DN Cell">
+          </div>
+
+          <div class="img-box galeria__item revelar" data-arquivo="imagens/loja-2.jpg">
+            <img src="imagens/nossa_loja/balcao.jpeg" alt="Bancada de reparo da DN Cell">
+          </div>
+
+          <div class="img-box galeria__item revelar" data-arquivo="imagens/loja-3.jpg">
+            <img src="imagens/nossa_loja/prateleira.jpeg" alt="Prateleiras de acessórios da DN Cell">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         COMO FUNCIONA
+         ========================================================= -->
+    <section class="secao" id="como-funciona">
+      <div class="container">
+        <h2 class="revelar">Como funciona</h2>
+
+        <div class="grade grade--3">
+
+          <div class="cartao passo revelar">
+            <span class="passo__numero">1</span>
+            <h3>Chame no WhatsApp</h3>
+            <p>Conte o que aconteceu com seu aparelho.</p>
+          </div>
+
+          <div class="cartao passo revelar">
+            <span class="passo__numero">2</span>
+            <h3>Traga o celular</h3>
+            <p>Fazemos a avaliação do orçamento grátis.</p>
+          </div>
+
+          <div class="cartao passo revelar">
+            <span class="passo__numero">3</span>
+            <h3>Aprove e pronto</h3>
+            <p>Você aprova o valor e a gente conserta.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         CONTATO + MAPA
+         EDITE AQUI: endereço, horários e o link do mapa (iframe)
+         ========================================================= -->
+    <section class="secao contato" id="contato">
+      <div class="container contato__grade">
+
+        <div class="contato__texto revelar">
+          <h2>Fale com a gente</h2>
+          <p class="contato__chamada">Mande uma mensagem. Respondemos com carinho.</p>
+
+          <a class="botao" data-whatsapp href="#">
+            <svg class="icone"><use href="#i-whatsapp"></use></svg>
+            Agendar orçamento grátis
+          </a>
+
+          <ul class="contato__lista">
+            <li>
+              <svg class="icone icone--ouro"><use href="#i-local"></use></svg>
+              <span>Rua Esperidião Rodrigues, 177-B, Centro, Arapiraca-AL</span>
+            </li>
+            <li>
+              <svg class="icone icone--ouro"><use href="#i-agenda"></use></svg>
+              <span>
+                <strong>Segunda a sexta:</strong> 08h às 18h<br>
+                <strong>Sábados:</strong> 08h às 13h<br>
+                <strong>Feriados não nacionais:</strong> horário normal
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mapa revelar">
+          <iframe
+            title="Mapa da localização da DN Cell"
+            src="https://www.google.com/maps?q=Rua+Esperidi%C3%A3o+Rodrigues,+177-B,+Centro,+Arapiraca-AL&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       RODAPÉ
+       ========================================================= -->
+  <footer class="rodape">
+    <div class="container">
+      DN CELL · Arapiraca-AL · <span id="ano"></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

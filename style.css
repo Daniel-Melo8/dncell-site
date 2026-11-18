@@ -1,0 +1,1061 @@
+/* =============================================================
+   DN CELL — Estilos do site
+   Tema: preto + dourado (tons tirados da logo)
+
+   COMO EDITAR:
+   - Cores:        mexa só nas variáveis do bloco ":root" (logo abaixo).
+   - Imagem de fundo: veja a seção "FUNDO DO SITE".
+   - Imagens:      todas usam a classe ".img-box" (veja "CAIXAS DE IMAGEM").
+   ============================================================= */
+
+
+/* =============================================================
+   1) VARIÁVEIS (CORES, TAMANHOS, FONTES)
+   ============================================================= */
+:root {
+  /* --- Dourado (do mais claro ao mais escuro) --- */
+  --ouro-100: #f6e9c6;
+  --ouro-200: #ecd79f;
+  --ouro-300: #dfc07f;
+  --ouro-400: #d2ae68;
+  --ouro-500: #c4a05a;   /* tom principal, parecido com o "CELL" da logo */
+  --ouro-600: #a8843f;
+  --ouro-700: #86672f;
+  --ouro-800: #5c4720;
+
+  /* Degradê dourado usado nos botões e detalhes */
+  --gradiente-ouro: linear-gradient(135deg, var(--ouro-200) 0%, var(--ouro-500) 55%, var(--ouro-600) 100%);
+
+  /* --- Pretos / grafites --- */
+  --preto:       #09090b;
+  --grafite-900: #0f0f12;
+  --grafite-800: #151518;
+  --grafite-700: #1c1c20;
+
+  /* --- Textos e bordas --- */
+  --texto:       #f5f2ea;
+  --texto-suave: #b3afa5;
+  --borda:       rgba(255, 255, 255, 0.09);
+  --borda-ouro:  rgba(196, 160, 90, 0.45);
+
+  /* --- Medidas --- */
+  --largura: 1112px;
+  --raio-g: 28px;
+  --raio-m: 20px;
+
+  /* --- Fontes --- */
+  --fonte-titulo: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fonte-texto:  "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+
+/* =============================================================
+   2) BASE
+   ============================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--texto);
+  background: var(--preto);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: clamp(1.7rem, 3.6vw, 2.1rem);
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+}
+
+/* Garante que elementos com o atributo "hidden" realmente sumam,
+   mesmo quando uma classe define "display" (ex.: botões, resumo de avaliações) */
+[hidden] {
+  display: none !important;
+}
+
+.container {
+  width: 100%;
+  max-width: calc(var(--largura) + 48px);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Ícones (SVG) */
+.icone {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icone--ouro {
+  color: var(--ouro-400);
+}
+
+
+/* =============================================================
+   3) FUNDO DO SITE
+   Imagem de fundo + gradiente escuro por cima.
+   -> Coloque sua imagem em:  imagens/fundo.jpg
+   -> Para escurecer MAIS ou MENOS a imagem, mude os valores
+      "0.72 / 0.88 / 0.96" (quanto maior, mais escuro).
+   Se a imagem não existir, aparece só o preto com um brilho dourado.
+   ============================================================= */
+.fundo-site {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--preto);
+  background-image:
+    /* brilho dourado suave no canto superior esquerdo */
+    radial-gradient(ellipse 70% 50% at 15% 0%, rgba(196, 160, 90, 0.16), transparent 60%),
+    /* gradiente escuro que "apaga" a imagem para ela ficar só de fundo */
+    linear-gradient(180deg, rgba(9, 9, 11, 0.72) 0%, rgba(9, 9, 11, 0.88) 55%, rgba(9, 9, 11, 0.96) 100%),
+    /* a imagem de fundo */
+    url("imagens/logos_princi/Image_fundo.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* =============================================================
+   4) CAIXAS DE IMAGEM (.img-box)
+   Já deixam a foto no lugar certo: preenchem a caixa inteira,
+   sem esticar (object-fit: cover), com cantos arredondados.
+   Enquanto você não coloca a foto, aparece um quadro escuro
+   com o nome do arquivo sugerido (atributo data-arquivo).
+   ============================================================= */
+.img-box {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1d1d22, #101013);
+}
+
+/* Etiqueta com o nome do arquivo (some sozinha quando a foto carrega) */
+.img-box::before {
+  content: attr(data-arquivo);
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--ouro-400);
+  opacity: 0.7;
+}
+
+.img-box img {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Esconde o "ícone de imagem quebrada" quando o src está vazio ou o arquivo não existe */
+img[src=""],
+img:not([src]),
+img.sem-imagem {
+  visibility: hidden;
+}
+
+
+/* =============================================================
+   5) LOGO
+   O "mix-blend-mode: screen" faz o fundo PRETO da logo sumir,
+   misturando com o fundo do site. Se usar uma logo PNG com fundo
+   transparente, pode apagar essa linha.
+   ============================================================= */
+.logo {
+  aspect-ratio: 733 / 540;
+  object-fit: contain;
+  mix-blend-mode: screen;
+}
+
+.logo--topo {
+  height: 72px;
+}
+
+.logo--hero {
+  width: min(360px, 80%);
+  margin: 20px 0 8px -14px;
+}
+
+
+/* =============================================================
+   6) TOPO
+   ============================================================= */
+.topo {
+  padding: 10px 0;
+}
+
+.topo__conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.pilula-local {
+  padding: 9px 18px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  background: rgba(21, 21, 24, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+
+/* =============================================================
+   7) BOTÃO PRINCIPAL (dourado)
+   ============================================================= */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 17px 32px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #17120a;
+  background: var(--gradiente-ouro);
+  border-radius: 999px;
+  box-shadow: 0 12px 32px -10px rgba(196, 160, 90, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.botao:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.07);
+  box-shadow: 0 16px 36px -10px rgba(196, 160, 90, 0.75);
+}
+
+.botao:focus-visible {
+  outline: 3px solid var(--ouro-200);
+  outline-offset: 3px;
+}
+
+.centralizar {
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* Botão secundário (contorno dourado): loja virtual e "Avaliar no Google".
+   Usa "inset box-shadow" no lugar de borda para ter a mesma altura do botão dourado. */
+.botao--contorno {
+  color: var(--ouro-200);
+  background: rgba(15, 15, 18, 0.6);
+  box-shadow: inset 0 0 0 1.5px var(--borda-ouro);
+  backdrop-filter: blur(6px);
+}
+
+.botao--contorno:hover {
+  background: rgba(196, 160, 90, 0.14);
+  box-shadow: inset 0 0 0 1.5px var(--ouro-300);
+}
+
+
+/* =============================================================
+   8) INÍCIO (HERO)
+   ============================================================= */
+.hero {
+  padding: 40px 0 72px;
+}
+
+.hero__grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 64px;
+}
+
+.selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 18px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ouro-300);
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  background: rgba(21, 21, 24, 0.7);
+}
+
+.selo__ponto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ouro-400);
+  box-shadow: 0 0 10px var(--ouro-400);
+}
+
+.hero h1 {
+  max-width: 520px;
+  font-size: clamp(1.6rem, 3.4vw, 2.1rem);
+  font-weight: 800;
+}
+
+.hero__descricao {
+  max-width: 440px;
+  margin: 22px 0 32px;
+  font-size: 1.05rem;
+  color: var(--texto-suave);
+}
+
+.hero__nota {
+  margin-top: 18px;
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+/* Botões de ação do início (WhatsApp + loja virtual) */
+.hero__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* Destaque discreto dos 20 anos de experiência */
+.hero__experiencia {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ouro-300);
+}
+
+.hero__experiencia .icone {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+/* Imagem principal do início */
+.hero__imagem {
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--borda-ouro);
+  border-radius: var(--raio-g);
+  box-shadow: 0 30px 80px -30px rgba(196, 160, 90, 0.35);
+}
+
+
+/* =============================================================
+   9) SEÇÕES (espaçamento e faixas)
+   ============================================================= */
+.secao {
+  padding: 72px 0;
+}
+
+.secao--compacta {
+  padding: 40px 0 72px;
+}
+
+.secao--sem-topo {
+  padding-top: 0;
+}
+
+/* Faixa um pouco mais clara atrás da seção */
+.secao--faixa {
+  background: rgba(15, 15, 18, 0.62);
+  backdrop-filter: blur(6px);
+}
+
+.subtitulo {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+.titulo-menor {
+  padding-top: 8px;
+  font-size: 1.5rem;
+}
+
+/* Parágrafo institucional (abaixo do título "Por que escolher") */
+.texto-institucional {
+  max-width: 720px;
+  margin-top: 14px;
+  font-size: 1.05rem;
+  color: var(--texto-suave);
+}
+
+/* Grade de 3 colunas (vira 1 coluna no celular) */
+.grade {
+  display: grid;
+  gap: 22px;
+  margin-top: 32px;
+}
+
+.grade--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* =============================================================
+   10) CARTÕES (base)
+   Os elementos da frente ficam mais claros que o fundo,
+   para ganhar destaque.
+   ============================================================= */
+.cartao {
+  background: rgba(24, 24, 28, 0.86);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-m);
+  backdrop-filter: blur(8px);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.cartao:hover {
+  border-color: var(--borda-ouro);
+  transform: translateY(-3px);
+}
+
+
+/* =============================================================
+   11) SERVIÇOS
+   ============================================================= */
+.servico {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 210px;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.servico p {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: var(--texto-suave);
+}
+
+.servico .icone {
+  margin-bottom: 10px;
+}
+
+/* Foto de fundo do card + gradiente escuro para o texto ficar legível */
+.servico__fundo {
+  position: absolute;
+  inset: 0;
+}
+
+/* Aviso do nome do arquivo no canto esquerdo (a setinha fica à direita) */
+.servico__fundo::before {
+  right: auto;
+  left: 18px;
+}
+
+.servico__fundo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(9, 9, 11, 0.35) 0%, rgba(9, 9, 11, 0.92) 100%);
+}
+
+/* Conteúdo do card sempre acima da foto */
+.servico > *:not(.servico__fundo) {
+  position: relative;
+  z-index: 3;
+}
+
+/* Os cards de serviço são links (abrem o WhatsApp) */
+.servico:focus-visible {
+  outline: 3px solid var(--ouro-200);
+  outline-offset: 3px;
+}
+
+/* Setinha no canto: indica que o card é clicável */
+.servico > .servico__seta {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0;
+  color: var(--ouro-400);
+  opacity: 0.55;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.servico:hover > .servico__seta {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+/* --- Outros serviços (cards compactos, sem foto) ---
+   4 por linha no computador; a última linha fica centralizada. */
+.servicos-extras {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 22px;
+}
+
+.servico--compacto {
+  flex: 0 0 calc((100% - 66px) / 4);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 14px;
+  min-height: 0;
+  padding: 22px;
+}
+
+.servico--compacto .icone {
+  margin-bottom: 0;
+}
+
+.servico__icone {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  color: var(--ouro-300);
+  border: 1px solid var(--borda-ouro);
+  border-radius: 50%;
+  background: rgba(196, 160, 90, 0.08);
+}
+
+.servico--compacto h3 {
+  font-size: 1.02rem;
+}
+
+.servico--compacto p {
+  margin-top: 4px;
+  font-size: 0.88rem;
+}
+
+
+/* =============================================================
+   11.1) MARCAS ATENDIDAS
+   5 por linha no computador (a última linha fica centralizada).
+   Cada logotipo fica sobre um quadro claro, com as cores originais:
+   funciona com SVG/PNG transparente e também com imagem de fundo branco.
+   -> Para trocar a cor do quadro, mude "background" em ".marca__logo".
+   ============================================================= */
+.marcas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.marca {
+  flex: 0 0 calc((100% - 72px) / 5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 16px 18px;
+  text-align: center;
+}
+
+.marca__logo {
+  width: 100%;
+  height: 72px;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+/* Nome do arquivo (aviso) centralizado enquanto não há logotipo */
+.marca__logo::before {
+  top: 50%;
+  right: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+/* Logotipo sempre inteiro (contain), sem distorcer, qualquer que seja o tamanho do arquivo */
+.marca__logo img {
+  padding: 10px 14px;
+  object-fit: contain;
+}
+
+/* O aviso do nome do arquivo (texto dourado) é só um lembrete: some quando o logotipo é colocado */
+.marca__logo:has(img:not([src=""]):not(.sem-imagem))::before {
+  display: none;
+}
+
+.marca__nome {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--texto-suave);
+}
+
+
+/* =============================================================
+   12) POR QUE ESCOLHER (diferenciais)
+   ============================================================= */
+.diferenciais {
+  margin-top: 28px;
+}
+
+.diferencial {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.diferencial__icone {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  color: var(--ouro-300);
+  border: 1px solid var(--borda-ouro);
+  border-radius: 50%;
+  background: rgba(196, 160, 90, 0.08);
+}
+
+.diferencial h3 {
+  font-size: 1.05rem;
+}
+
+.diferencial p {
+  margin-top: 4px;
+  font-size: 0.95rem;
+  color: var(--texto-suave);
+}
+
+/* Diferenciais em destaque (20 anos + técnico especializado) */
+.destaques {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin-top: 32px;
+}
+
+.destaque {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 26px;
+  border-color: var(--borda-ouro);
+  background: linear-gradient(135deg, rgba(196, 160, 90, 0.16) 0%, rgba(24, 24, 28, 0.88) 65%);
+}
+
+.destaque__icone {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  color: #17120a;
+  border-radius: 50%;
+  background: var(--gradiente-ouro);
+}
+
+.destaque h3 {
+  font-size: 1.15rem;
+}
+
+.destaque p {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: var(--texto-suave);
+}
+
+
+/* =============================================================
+   13) DEPOIMENTOS
+   ============================================================= */
+.depoimento {
+  margin: 0;
+  padding: 28px;
+}
+
+.depoimento blockquote {
+  margin: 14px 0 20px;
+  font-style: italic;
+  color: var(--texto-suave);
+}
+
+.depoimento figcaption {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+
+/* =============================================================
+   13.1) AVALIAÇÕES DO GOOGLE (cartões criados pelo script.js)
+   ============================================================= */
+.avaliacoes-resumo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.avaliacoes-resumo__nota {
+  font-family: var(--fonte-titulo);
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.avaliacoes-resumo__total {
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+/* Estrelas (cheias = douradas; vazias = só o contorno) */
+.estrelas {
+  display: inline-flex;
+  gap: 2px;
+  color: var(--ouro-400);
+}
+
+.estrela {
+  width: 1.05rem;
+  height: 1.05rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linejoin: round;
+}
+
+.estrela--cheia {
+  fill: currentColor;
+}
+
+.avaliacao {
+  display: flex;
+  flex-direction: column;
+}
+
+.avaliacao__topo {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.avaliacao__autor {
+  font-weight: 700;
+}
+
+a.avaliacao__autor:hover {
+  color: var(--ouro-300);
+}
+
+.avaliacao__data {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+
+/* Limita comentários muito longos a 7 linhas */
+.avaliacao blockquote {
+  display: -webkit-box;
+  flex: 1;
+  margin: 12px 0 18px;
+  overflow: hidden;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+}
+
+.avaliacao__origem {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--ouro-300);
+}
+
+.avaliacoes-vazio {
+  margin-top: 28px;
+  color: var(--texto-suave);
+}
+
+.avaliacoes-acoes {
+  margin-top: 32px;
+  text-align: center;
+}
+
+
+/* =============================================================
+   14) NOSSA LOJA (galeria)
+   ============================================================= */
+.galeria__item {
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-m);
+}
+
+.tag-exemplo {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--texto);
+  border-radius: 999px;
+  background: rgba(9, 9, 11, 0.7);
+}
+
+
+/* =============================================================
+   15) COMO FUNCIONA
+   ============================================================= */
+.passo {
+  padding: 28px;
+}
+
+.passo__numero {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 22px;
+  font-weight: 800;
+  color: #17120a;
+  border-radius: 50%;
+  background: var(--gradiente-ouro);
+}
+
+.passo h3 {
+  font-size: 1.1rem;
+}
+
+.passo p {
+  margin-top: 4px;
+  color: var(--texto-suave);
+}
+
+
+/* =============================================================
+   16) CONTATO + MAPA
+   ============================================================= */
+.contato__grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 64px;
+}
+
+.contato__chamada {
+  margin: 12px 0 28px;
+  font-size: 1.1rem;
+  color: var(--texto-suave);
+}
+
+.contato__lista {
+  display: grid;
+  gap: 18px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contato__lista li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.contato__lista .icone {
+  margin-top: 2px;
+}
+
+.mapa {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid var(--borda-ouro);
+  border-radius: var(--raio-g);
+  box-shadow: 0 30px 80px -30px rgba(196, 160, 90, 0.3);
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  /* Deixa o mapa escuro, combinando com o site.
+     Para o mapa normal (claro), apague a linha abaixo. */
+  filter: invert(92%) hue-rotate(180deg) contrast(0.9) saturate(0.5);
+}
+
+
+/* =============================================================
+   17) RODAPÉ
+   ============================================================= */
+.rodape {
+  padding: 40px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+
+/* =============================================================
+   18) ANIMAÇÃO DE ENTRADA (ativada pelo script.js)
+   ============================================================= */
+.revelar--oculto {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.revelar--visivel {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revelar--oculto {
+    opacity: 1;
+    transform: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+
+/* =============================================================
+   19) CELULAR / TELAS MENORES
+   ============================================================= */
+@media (max-width: 900px) {
+  .hero {
+    padding-bottom: 48px;
+  }
+
+  .hero__grade,
+  .contato__grade {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .grade--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .secao {
+    padding: 56px 0;
+  }
+
+  .logo--hero {
+    width: min(300px, 80%);
+  }
+
+  .destaques {
+    grid-template-columns: 1fr;
+  }
+
+  /* Serviços compactos: 2 por linha */
+  .servico--compacto {
+    flex-basis: calc((100% - 22px) / 2);
+  }
+
+  /* Marcas: 3 por linha */
+  .marca {
+    flex-basis: calc((100% - 36px) / 3);
+  }
+}
+
+@media (max-width: 520px) {
+  .logo--topo {
+    height: 60px;
+  }
+
+  .pilula-local {
+    padding: 8px 12px;
+    font-size: 0.65rem;
+  }
+
+  .botao {
+    width: 100%;
+    justify-content: center;
+    padding: 16px 20px;
+  }
+
+  .hero__acoes {
+    width: 100%;
+  }
+
+  /* Serviços compactos: 1 por linha, ícone ao lado do texto */
+  .servico--compacto {
+    flex-basis: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 44px 18px 18px;
+  }
+
+  /* Marcas: 3 por linha, mais compactas */
+  .marcas {
+    gap: 12px;
+  }
+
+  .marca {
+    flex-basis: calc((100% - 24px) / 3);
+    padding: 16px 8px 14px;
+  }
+
+  .marca__logo {
+    height: 56px;
+  }
+
+  .marca__logo img {
+    padding: 8px 10px;
+  }
+
+  .marca__logo::before {
+    display: none;
+  }
+}
