@@ -32,7 +32,7 @@ const CONFIG = {
 
   // Endereço da LOJA VIRTUAL (ex.: "https://www.sualoja.com.br").
   // Deixe vazio ("") e o botão "Acessar nossa loja" fica escondido.
-  lojaUrl: "https://loja-online-operacao50k.vercel.app/",
+  lojaUrl: "https://loja-dn-cell.web.app/",
 
   // Endereço da função segura que devolve as avaliações do Google
   // (veja a pasta "servidor" e o arquivo LEIA-ME.md).
